@@ -1,12 +1,14 @@
 apiVersion: networking.k8s.io/v1
-kind: ingress
+kind: route
 metadata:
   name: landing-page
   namespace: gitops-app
+  labels:
+    app.kubernetes.io/part-of: landing-page
 spec:
   ingressClassName: traefik
   rules:
-    - host: landing.3.231.24.162.sslip.io
+    - host: 
       http:
         paths:
           - backend:
