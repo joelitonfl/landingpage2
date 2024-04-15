@@ -1,4 +1,5 @@
 kind: Route
+apiVersion: networking.k8s.io/v1
 metadata:
   name: landing-page
   labels:
