@@ -1,5 +1,4 @@
 kind: Route
-apiVersion: route.rancher.io/v1
 metadata:
   name: landing-page
   labels:
