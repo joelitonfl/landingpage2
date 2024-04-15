@@ -1,24 +1,61 @@
 apiVersion: networking.k8s.io/v1
-kind: ingress
+kind: Ingress
 metadata:
   name: landing-page
-  namespace: gitops-app
+  annotations:
+    {}
+    #  key: string
   labels:
-    app.kubernetes.io/part-of: landing-page
+    {}
+    #  key: string
+  namespace: fleet-local
 spec:
-  ingressClassName: traefik
   rules:
-    - host: 
+    - vKey: 3294855404
+      host: landing.3.231.24.162.sslip.io
       http:
         paths:
-          - backend:
+          - id: 591955381
+            backend:
               service:
-                name: landing-page
                 port:
                   number: 8080
+                name: ''
             path: /
             pathType: ImplementationSpecific
-status:
-  loadBalancer:
-    ingress:
-      - ip: 10.0.1.142
+#    - host: string
+#      http:
+#        paths:
+#          - backend:
+#              resource:
+#                apiGroup: string
+#                kind: string
+#                name: string
+#              service:
+#                name: string
+#                port:
+#                  name: string
+#                  number: int
+#            path: string
+#            pathType: string
+  tls:
+#    - hosts:
+#        - string
+#      secretName: string
+  backend:
+    {}
+#  defaultBackend:
+#    resource:
+#      apiGroup: string
+#      kind: string
+#      name: string
+#    service:
+#      name: string
+#      port:
+#        name: string
+#        number: int
+#  ingressClassName: string
+__clone: true
+cacheObject:
+  useNestedBackendField: true
+  showPathType: true
